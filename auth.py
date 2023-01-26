@@ -5,7 +5,7 @@ from jose import jwt
 from urllib.request import urlopen
 
 
-AUTH0_DOMAIN = 'fsndprojects.us.auth0.com'
+AUTH0_DOMAIN = 'majeed.us.auth0.com'
 ALGORITHMS = ['RS256']
 API_AUDIENCE = 'capstone'
 
@@ -33,13 +33,13 @@ def get_token_auth_header():
             'description': 'Authorization header must start with "Bearer".'
         }, 401)
 
-    elif len(parts) < 1:
+    elif len(parts) < 2:
         raise AuthError({
             'code': 'invalid_header',
             'description': 'Token not found.'
         }, 401)
 
-    elif len(parts) > 1:
+    elif len(parts) > 2:
         raise AuthError({
             'code': 'invalid_header',
             'description': 'Authorization header must be bearer token.'
