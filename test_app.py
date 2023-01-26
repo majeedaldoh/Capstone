@@ -11,8 +11,8 @@ class CapstoneTestCase(unittest.TestCase):
         self.app = create_app()
         self.client = self.app.test_client
         
-        # database_name = "capstoneproject"
-        # database_path = "postgresql://{}@{}/{}".format('postgres:Pp251100', 'localhost:5432', self.database_name)
+        #database_name = "capstoneproject"
+        #database_path = "postgresql://{}@{}/{}".format('postgres:Pp251100', 'localhost:5432', self.database_name)
         database_path = os.environ['DATABASE_URL']
         if database_path.startswith("postgres://"):
             database_path = database_path.replace(
